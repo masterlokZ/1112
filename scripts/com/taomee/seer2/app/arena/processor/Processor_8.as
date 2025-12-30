@@ -1,0 +1,77 @@
+package com.taomee.seer2.app.arena.processor
+{
+   import com.taomee.seer2.app.arena.ArenaScene;
+   import com.taomee.seer2.app.net.CommandSet;
+   import com.taomee.seer2.app.net.Connection;
+   import com.taomee.seer2.core.net.MessageEvent;
+   import flash.utils.IDataInput;
+   
+   public class Processor_8 extends ArenaProcessor
+   {
+      
+      public function Processor_8(param1:ArenaScene)
+      {
+         super(param1);
+      }
+      
+      override public function init() : void
+      {
+         Connection.addCommandListener(CommandSet.FIGHT_CHANGED_NOTIFY_8,this.processor);
+      }
+      
+      override public function processor(param1:MessageEvent) : void
+      {
+         var _loc3_:Boolean = false;
+         var _loc2_:IDataInput = param1.message.getRawData();
+         var _loc4_:Parser_8 = new Parser_8(_loc2_);
+         fightController.changeFighter(_loc4_.userId,_loc4_.fighterId,_loc4_.angerValue,1);
+         fightController.leftTeam.getFighter(_loc4_.userId,_loc4_.fighterId).updateAnger(_loc4_.angerValue);
+         _loc3_ = Boolean(fightController.leftTeam.containsFighter(_loc4_.userId,_loc4_.fighterId));
+         if(_loc3_ == true)
+         {
+            _secne.leftTeam.mainFighter.updateFighterBuffer(_loc4_.parserFighterBuffInfo(_loc2_));
+            arenaUIController.updateStatusPanel();
+         }
+      }
+      
+      override public function dispose() : void
+      {
+         super.dispose();
+         Connection.removeCommandListener(CommandSet.FIGHT_CHANGED_NOTIFY_8,this.processor);
+      }
+   }
+}
+
+import com.taomee.seer2.app.arena.data.FighterBuffInfo;
+import flash.utils.IDataInput;
+
+class Parser_8
+{
+   
+   public var userId:uint;
+   
+   public var fighterId:uint;
+   
+   public var angerValue:uint;
+   
+   public function Parser_8(param1:IDataInput)
+   {
+      super();
+      this.userId = param1.readUnsignedInt();
+      this.fighterId = param1.readUnsignedInt();
+      this.angerValue = param1.readUnsignedInt();
+   }
+   
+   public function parserFighterBuffInfo(param1:IDataInput) : Vector.<FighterBuffInfo>
+   {
+      var _loc2_:uint = uint(param1.readUnsignedInt());
+      var _loc4_:Vector.<FighterBuffInfo> = new Vector.<FighterBuffInfo>();
+      var _loc3_:uint = 0;
+      while(_loc3_ < _loc2_)
+      {
+         _loc4_.push(new FighterBuffInfo(param1));
+         _loc3_++;
+      }
+      return _loc4_;
+   }
+}

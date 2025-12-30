@@ -1,0 +1,15 @@
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<!--
+	horns配置项
+	Week="星期几",星期日写0;
+	Time="几时";
+	Minute="几分";
+	MouseClickType="鼠标单击后的类型", module为打开面板 gotoMap为跳转到哪号地图;
+	Transport="打开面板或跳转地图的名字或者编号";
+	Content="播放的内容是啥";
+ -->
+<root>
+	<horns Week="5" Time="18" Minute="1" MouseClickType="module" Transport="HSFreeGetPanel" Content="周末限时领惊喜包"/>
+	<horns Week="6" Time="17" Minute="1" MouseClickType="module" Transport="HSFreeGetPanel" Content="周末限时领惊喜包"/>
+	<horns Week="0" Time="17" Minute="50" MouseClickType="module" Transport="HSFreeGetPanel" Content="周末限时领惊喜包 即将结束"/>
+</root>
