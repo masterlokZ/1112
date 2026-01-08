@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="http://ns.adobe.com/air/extension/51.2">
+    <id>com.seer2.extensions.resolution</id>
+    <versionNumber>1.0.0</versionNumber>
+    <platforms>
+        <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>ResolutionController.jar</nativeLibrary>
+                <initializer>com.seer2.extensions.resolution.ResolutionController</initializer>
+                <finalizer>com.seer2.extensions.resolution.ResolutionController</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-ARM64">
+            <applicationDeployment>
+                <nativeLibrary>ResolutionController.jar</nativeLibrary>
+                <initializer>com.seer2.extensions.resolution.ResolutionController</initializer>
+                <finalizer>com.seer2.extensions.resolution.ResolutionController</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="Android-x86">
+            <applicationDeployment>
+                <nativeLibrary>ResolutionController.jar</nativeLibrary>
+                <initializer>com.seer2.extensions.resolution.ResolutionController</initializer>
+                <finalizer>com.seer2.extensions.resolution.ResolutionController</finalizer>
+            </applicationDeployment>
+        </platform>
+        <platform name="default">
+            <applicationDeployment/>
+        </platform>
+    </platforms>
+</extension>

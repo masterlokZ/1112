@@ -1,0 +1,35 @@
+<root>
+    <rootURL>0</rootURL>
+    <resolution>1</resolution>
+    <domain>fish-yet.733702.xyz</domain>
+    <imageQuality>1</imageQuality>
+    <otherPlayers>1</otherPlayers>
+    <sound>1</sound>
+    <UI_Arena>0</UI_Arena>
+    <fighterAnimation>1</fighterAnimation>
+    <fighterAnimationFront>0</fighterAnimationFront>
+    <register>0</register>
+    <resReplaceList>
+        <type name="战斗动画" id="0">
+        </type>
+        <type name="背包展示" id="1">
+        </type>
+        <type name="精灵头像" id="2">
+        </type>
+        <type name="地图swf" id="3">
+        </type>
+        <type name="地图音乐" id="4">
+        </type>
+        <type name="buff图标" id="5">
+        </type>
+    </resReplaceList>
+    <dynConfig>00000000000</dynConfig>
+    <customConfig>
+        <config name="技能描述" path="" state="0"/>
+        <config name="Nono" path="" state="0"/>
+        <config name="活动日历" path="" state="0"/>
+        <config name="工具栏" path="" state="0"/>
+        <config name="精灵" path="" state="0"/>
+        <config name="打击帧" path="" state="0"/>
+    </customConfig>
+</root>
